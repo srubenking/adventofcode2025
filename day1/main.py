@@ -7,28 +7,35 @@ With it at 19, an input of L20 would cause it to point to 99 (19 - 20 = -1 | -1 
 
 """
 
-f = open("input.txt")
-instructions = f.read().splitlines()
+def main():
+    f = open("input.txt")
+    instructions = f.read().splitlines()
 
-dial = 50
-zeroes = 0
+    dial = 50
+    zeroes = 0
 
-for rotation in instructions:
-    direction = rotation[0]
-    clicks = int(rotation[1:])
-    
-    if direction == "L":
-        # left
-        dial -= clicks
-    else:
-        # right
-        dial += clicks
+    for rotation in instructions:
+        direction = rotation[0]
+        clicks = int(rotation[1:])
+        
+        if direction == "L":
+            # left
+            dial -= clicks
+        else:
+            # right
+            dial += clicks
 
-    # need to account for numbers < -100
-    while dial < 0:
-        dial += 100
+        # account for negative numbers in general, and going < -100 with while loop
+        while dial < 0:
+            dial += 100
 
-    if dial == 0:
-        zeroes += 1
+        # account for number > 99 in general, and going > 199 with while loop
+        while dial > 99:
+            dial -= 100
 
-print(zeroes)
+        if dial == 0:
+            zeroes += 1
+
+    print(zeroes)
+
+main()
