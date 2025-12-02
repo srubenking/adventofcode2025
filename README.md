@@ -1,16 +1,16 @@
 # Advent of Code 2025
 
+This is my first Advent of Code, and first year trying to take learning coding even remotely seriously. I thought I'd write out my thoughts about each day, but we'll see if I keep up with it.
+
 <details>
-  <summary>Day 1 (spoilers!)</summary>
+  <summary>Day 1</summary>
   
   ## Part 1
-  First attempt was a failure. Found that I wasn't accounting for rotations that brought the number lower than -100.
+  First attempt was a failure since I was just simply subtracting or adding the numbers to the dial position and then "fixing" it by adding or subtracting 100. This obviously didn't account for when the dial was greater/less than 100/-100 (and of course I didn't account for both in my first "fix").
 
-  Fixed this but still wrong.
-
-  Wasn't accounting for numbers higher than 99! My fault for trying to do this at almost 3 in the morning.
+  Got it eventually, but the lesson of this round was not to do this stuff at 3am.
 
   ## Part 2
-  Again, first attempt failed, must be not accounting for something.
+  I don't wanna talk about it. It works now though.
   
 </details>
