@@ -22,7 +22,7 @@ This is my first Advent of Code, and first year trying to take learning coding e
   Huge improvement from Day 1! The first time I *thought* I had the correct solution was the time I *did* have the correct solution! I did what felt like a pretty simple (mentally) method and just checked if the first half of an even length integer (but as a string) matched the second half. I talked with my partner about a way this could be done mathematically afterwards though, and depending on the requirements for Part 2 might update my code to do that (it took a hot second to run what I have now).
 
   ### Part 2
-  I THOUGHT SO. I didn't think so enough to prepare for it in Part 1 though.
+  I THOUGHT SO. I didn't think so enough to prepare for it in Part 1 though. I updated my day 1 code to do what I described above, but then had to use pen and paper to work out how to apply it to these new patterns. My first try was too high, but it turned out I just needed to delete the solution from Part 1 that was still in my Part 2 function. Success!
   
 </details>
 
