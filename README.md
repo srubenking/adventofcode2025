@@ -30,7 +30,9 @@ This is my first Advent of Code, and first year trying to take learning coding e
   <summary>Day 3</summary>
   
   ### Part 1
-  tba
+  Done first try! I've found using the example cases in the instructions very helpful to do the initial testing/debugging on a more manageable set of data. Once again though, it is 3am and I guess I forgot how math works so my solution for "smoosh two numbers together without *adding* them together" was to...turn the integers into strings, concatenate the strings, and then turn the result into an integer...
+  
+  (I immediately figured out the smarter way to do this when saying it out loud but it's so stupid I don't want to change it now)
 
   ### Part 2
   tba
