@@ -48,40 +48,34 @@ def check_range(pair):
     return total_in_range
 
 def get_digits(num):
+    # gets the number of digits in num - have to add 1 to get total, result otherwise is x where 10^x = num
     return int(math.log10(num)) + 1
 
+def get_factors(num):
+    factors = []
+    for i in range(1, num):
+        if num % i == 0:
+            factors.append(i)
+
+    return factors
+
 def is_repeat_two(num):
-    # now need to adjust checks - odd numbers can be valid if just repeating an odd-numbered sequence of digits and odd-numbered amount of times
-    # can maybe expand the math method below - 123123123 / 1001001 = 123 for example, length is 9 digits * (2/3) + 1
-    # start simple, use check from first function, then follow up with this?
-    # the number of digits in the sequence doesn't matter - what matters is just that there's either an even or odd number of repetitions I think?
-    # 123412341234 / 100010001 = 1234 ;  1 goes in the middle if even?
-    # 123123123 / 1001001 = 123 ; no, 1 goes in the middle if there are 3 repeats - this is how I'm checking for IF there are repeats though
-    # 1212121212 / 101010101 = 12
-    # cases to cover
-    # [OK] even length number, even number repeats
-    # [  ] even length number, odd number repeats (like 3 repeats of 4 digits in a 12 digit number)
-    # [  ] odd length number, odd number repeats (can't have even number repeats)
+    # result is too high
     
     # same as before but adding an else statement for odd numbers
     digits = get_digits(num)
-    result = False
-    # check if even
-    if digits % 2 == 0:
-        # do even things
-        even_length = int(10 ** (digits / 2) + 1)
-        odd_length = int(10 ** (digits * 2 / 3) + 1)
-        if num % even_length == 0:
-            result = True
-        else:
-            # account for if the length is even but the number of repeats is odd, like 121212 (121212 / 10101 = 12)
-            # need to iterate over the odd length possibilities
-            # 123123123 - 9 digits
-            result = True
-    else:
-        # do odd things
-        return
-    return result
+    # don't need explicit even/odd check - just need to iterate over all possibilities
+ 
+    # start with digits, then iterate over its factors - for example 15 digits, then 5 then 3 then 1
+    factors_list = get_factors(digits) # [1, 3, 5]
+    for factor in factors_list:
+        check = 0
+        range_end = int(digits / factor)
+        for i in range(0, range_end):
+            check += 10 ** (i * factor) 
+        if num % check == 0:
+            return True
+    return False
 
 def is_repeat_one(num):
     # try implementing Zeb's method - get number of digits with log10 and round up (or round down and add 1)
