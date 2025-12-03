@@ -5,12 +5,12 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 1</summary>
   
-  #### Part 1
+  ### Part 1
   First attempt was a failure since I was just simply subtracting or adding the numbers to the dial position and then "fixing" it by adding or subtracting 100. This obviously didn't account for when the dial was greater/less than 100/-100 (and of course I didn't account for both in my first "fix").
 
   Got it eventually, but the lesson of this round was not to do this stuff at 3am.
 
-  #### Part 2
+  ### Part 2
   I don't wanna talk about it. It works now though.
   
 </details>
@@ -21,18 +21,18 @@ This is my first Advent of Code, and first year trying to take learning coding e
   #### Part 1
   Huge improvement from Day 1! The first time I *thought* I had the correct solution was the time I *did* have the correct solution! I did what felt like a pretty simple (mentally) method and just checked if the first half of an even length integer (but as a string) matched the second half. I talked with my partner about a way this could be done mathematically afterwards though, and depending on the requirements for Part 2 might update my code to do that (it took a hot second to run what I have now).
 
-  #### Part 2
-  tba
+  ### Part 2
+  I THOUGHT SO. I didn't think so enough to prepare for it in Part 1 though.
   
 </details>
 
 <details>
   <summary>Day 3</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -40,10 +40,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 4</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>

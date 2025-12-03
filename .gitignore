@@ -211,3 +211,4 @@ adventofcode2025.code-workspace
 
 # Any test inputs
 test.txt
+test*.txt

@@ -18,7 +18,12 @@ The rest of the ranges contain no invalid IDs.
 Adding up all the invalid IDs in this example produces 1227775554.
 
 What do you get if you add up all of the invalid IDs?
+
+Part 2:
+
+Any ID made of only a sequence of digits repeated ANY NUMBER OF TIMES (12341234, 123123123, 1212121212, 1111111) is now invalid
 """
+import math
 
 def main():
     ranges = ranges_from_file("input.txt")
@@ -38,23 +43,58 @@ def check_range(pair):
     for i in range(start, end):
         # first pair from example should add 2 to the count, with 11 and 22 being the trigger
         # print(f"{i} is a repeat: {is_repeat(i)}")
-        if is_repeat(i):
+        if is_repeat_two(i):
             total_in_range += i
     return total_in_range
 
-def is_repeat(num):
-    # this is where the meat goes - need to check for redundancy
-    # return True if repeat, like 11 or 22 - return False otherwise
-    # ironically, after having converted them to integers I believe treating them as strings would be the easiest way to check for this
-    check_num = str(num)
+def get_digits(num):
+    return int(math.log10(num)) + 1
+
+def is_repeat_two(num):
+    # now need to adjust checks - odd numbers can be valid if just repeating an odd-numbered sequence of digits and odd-numbered amount of times
+    # can maybe expand the math method below - 123123123 / 1001001 = 123 for example, length is 9 digits * (2/3) + 1
+    # start simple, use check from first function, then follow up with this?
+    # the number of digits in the sequence doesn't matter - what matters is just that there's either an even or odd number of repetitions I think?
+    # 123412341234 / 100010001 = 1234 ;  1 goes in the middle if even?
+    # 123123123 / 1001001 = 123 ; no, 1 goes in the middle if there are 3 repeats - this is how I'm checking for IF there are repeats though
+    # 1212121212 / 101010101 = 12
+    # cases to cover
+    # [OK] even length number, even number repeats
+    # [  ] even length number, odd number repeats (like 3 repeats of 4 digits in a 12 digit number)
+    # [  ] odd length number, odd number repeats (can't have even number repeats)
+    
+    # same as before but adding an else statement for odd numbers
+    digits = get_digits(num)
     result = False
-    length = len(check_num)
-    # check if number is odd by getting remainder from length % 2 - no odd number would be invalid, so only proceed if remainder is 0
-    if length % 2 == 0:
-        middle = int(length / 2)
-        first_half = check_num[:middle]
-        second_half = check_num[middle:]
-        if first_half == second_half:
+    # check if even
+    if digits % 2 == 0:
+        # do even things
+        even_length = int(10 ** (digits / 2) + 1)
+        odd_length = int(10 ** (digits * 2 / 3) + 1)
+        if num % even_length == 0:
+            result = True
+        else:
+            # account for if the length is even but the number of repeats is odd, like 121212 (121212 / 10101 = 12)
+            # need to iterate over the odd length possibilities
+            # 123123123 - 9 digits
+            result = True
+    else:
+        # do odd things
+        return
+    return result
+
+def is_repeat_one(num):
+    # try implementing Zeb's method - get number of digits with log10 and round up (or round down and add 1)
+    # then divide the number by a sequence 1...1 with 0s (or nothing) filling the space - length is the number of digits / 2 + 1
+    # 2 : 2, 4 : 3, 6 : 4, 8: 5
+    # for example 123123 is 6 digits, so 123123/1001 = 123, 55/11 = 5, 1010/101 = 10, 12341234/10001 = 1234
+    digits = get_digits(num)
+    result = False
+    # check if even
+    if digits % 2 == 0:
+        # do even things
+        divide_by = int(10 ** (digits / 2) + 1)
+        if num % divide_by == 0:
             result = True
     return result
 
