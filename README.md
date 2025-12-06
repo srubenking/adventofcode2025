@@ -38,6 +38,8 @@ This is my first Advent of Code, and first year trying to take learning coding e
   Part 2 makes me realize my `int(str(int()) + str(int()))` solution actually wasn't that crazy! Only problem is I think I may have to give up on solving Part 2 entirely because even forgetting entirely about how to *program* it, I'm just having trouble wrapping my head around how to most effectively eyeball what a single result should look like when it gets more complicated than say `818181911112111`.
 
   My new idea is to get the first instance of the biggest number in a subset of the bank - this subset will be the first X batteries, where X is the difference between the total in the bank and the 12 we need to pick out. For each number eliminated, the number being compared needs to reduce by that many. Need to be able to eliminate all X if the next one is larger than all of them, so subset should actually be X + 1.
+
+  I'll have to reread these notes to make sense of them later, but the basic idea I had in my head above ended up being the solution I went with!
   
 </details>
 
