@@ -1,6 +1,6 @@
 # Advent of Code 2025
 
-This is my first Advent of Code, and first year trying to take learning coding even remotely seriously. I thought I'd write out my thoughts about each day, but we'll see if I keep up with it.
+This is my first Advent of Code, and first year trying to take learning coding even remotely seriously. I thought I'd write out my thoughts about each day, but we'll see if I keep up with it. My thoughts below might contain some spoilers so I've hidden them away safely, but honestly I'm sure it doesn't really matter.
 
 <details>
   <summary>Day 1</summary>
@@ -35,7 +35,9 @@ This is my first Advent of Code, and first year trying to take learning coding e
   (I immediately figured out the smarter way to do this when saying it out loud but it's so stupid I don't want to change it now)
 
   ### Part 2
-  tba
+  Part 2 makes me realize my `int(str(int()) + str(int()))` solution actually wasn't that crazy! Only problem is I think I may have to give up on solving Part 2 entirely because even forgetting entirely about how to *program* it, I'm just having trouble wrapping my head around how to most effectively eyeball what a single result should look like when it gets more complicated than say `818181911112111`.
+
+  My new idea is to get the first instance of the biggest number in a subset of the bank - this subset will be the first X batteries, where X is the difference between the total in the bank and the 12 we need to pick out. For each number eliminated, the number being compared needs to reduce by that many. Need to be able to eliminate all X if the next one is larger than all of them, so subset should actually be X + 1.
   
 </details>
 
@@ -53,10 +55,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 5</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -64,10 +66,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 6</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -75,10 +77,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 7</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -86,10 +88,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 8</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -97,10 +99,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 9</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -108,10 +110,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 10</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -119,10 +121,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 11</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>
@@ -130,10 +132,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
 <details>
   <summary>Day 12</summary>
   
-  #### Part 1
+  ### Part 1
   tba
 
-  #### Part 2
+  ### Part 2
   tba
   
 </details>

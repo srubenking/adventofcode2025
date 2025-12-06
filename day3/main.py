@@ -24,6 +24,7 @@ In 818181911112111, you can make the largest joltage possible, 888911112111, by 
 
 Total output joltage is 3121910778619
 """
+from collections import OrderedDict
 
 def main():
     banks = read_file("test.txt")
@@ -45,47 +46,28 @@ def main():
 def get_joltage(list):
     return
 
+def freq_analysis(bank):
+    freq = {}
+    for battery in bank:
+        if battery in freq:
+            freq[battery] += 1
+        else:
+            freq[battery] = 1
+
+    # now put them in ascending order by key
+    ord_freq = OrderedDict(sorted(freq.items()))
+
+    return ord_freq
+
 def get_twelve(bank):
-    largest, smallest = 0, 9
-    smallest_index = int()
-    batteries = [] 
-    # thought would be dictionary of the chosen batteries' index in the bank (unique) : the number it corresponds to (not unique)
-    # going to try a list instead
+    batteries = bank.split()
+    freq = freq_analysis(bank)
+    to_remove = len(bank) - 12
 
-    for i in range(0, len(bank)):
-        battery = int(bank[i])
-        
-        # NEXT IDEA: need to somehow track more than simply the oldest smallest index
+    twelve = "" # empty string to add batteries onto
 
-        if battery > largest:
-            largest = battery
-            batteries.append(largest)
-            if i >= 12:
-                print(f"popping battery {battery} at index {smallest_index}")
-                batteries.pop(smallest_index)
-        elif battery < smallest:
-            # this could be a problem - being small and EARLY matters more than being small in general, maybe?
-            if i < 12:
-                print(f"{battery} is smaller than {smallest}")
-                smallest = battery
-                smallest_index = i
-                print(f"smallest battery index set to {smallest_index}")
-                batteries.append(smallest)
-        elif battery == smallest:
-            if i < 12:
-                batteries.append(smallest)
-            elif i >= 12:
-                print(f"popping battery {battery} at index {smallest_index}")
-                batteries.pop(smallest_index)
-                smallest = battery
-                smallest_index = i
-        elif battery >= smallest:
-            batteries.append(battery)
-            if i >= 12:
-                print(f"popping battery {battery} at index {smallest_index}")
-                batteries.pop(smallest_index)
-                smallest = battery
-        
+
+    
     return batteries
 
 def get_pair(bank):
