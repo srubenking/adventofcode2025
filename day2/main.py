@@ -8,6 +8,7 @@ Part 2: Any ID made of only a sequence of digits repeated ANY NUMBER OF TIMES (e
 What do you get if you add up all of the invalid IDs?
 """
 import math
+import time
 
 def main():
     ranges = ranges_from_file("input.txt")
@@ -87,4 +88,6 @@ def ranges_from_file(file):
     
     return int_ranges
 
+start_time = time.time()
 main()
+print("--- %s seconds ---" % (time.time() - start_time))

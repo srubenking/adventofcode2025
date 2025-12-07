@@ -24,6 +24,7 @@ In 818181911112111, you can make the largest joltage possible, 888911112111, by 
 
 Total output joltage is 3121910778619
 """
+import time
 
 def main():
     banks = read_file("input.txt")
@@ -72,4 +73,6 @@ def read_file(file):
     f = open(file)
     return f.read().splitlines()
 
+start_time = time.time()
 main()
+print("--- %s seconds ---" % (time.time() - start_time))

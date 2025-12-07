@@ -7,6 +7,7 @@ Part 1: the password is equal to the number of times the dial is LEFT pointing a
 Part 2: the password is equal to the number of times the dial ever passes over OR lands on 0
 
 """
+import time
 
 def main():
     f = open("input.txt")
@@ -78,4 +79,6 @@ def set_dial(dial, clicks, direction):
     else:
         return (dial + clicks) % 100
 
+start_time = time.time()
 main()
+print("--- %s seconds ---" % (time.time() - start_time))
