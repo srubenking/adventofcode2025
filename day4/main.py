@@ -19,9 +19,23 @@ import time
 
 def main():
     floor_map = read_file("input.txt")
+    total_forkliftable = 0
+
+    for i in range(0, len(floor_map)):
+        forkliftable, new_map = remove_rolls(floor_map)
+        total_forkliftable += forkliftable
+        for row in new_map:
+            print("".join(row))
+        
+        floor_map = new_map.copy()
+
+        print(f"{forkliftable} forkliftable rolls")    
+        print(f"{total_forkliftable} total forkliftable rolls")
+
+def remove_rolls(floor_map):
     forkliftable = 0
     new_map = []
-    
+
     for row in range(0, len(floor_map)):
         row_list = floor_map[row].copy()
         for column in range(0, len(floor_map[row])):
@@ -32,12 +46,9 @@ def main():
                     row_list[column] = "x"
                     #print(f"{forkliftable} forkliftable so far")
             #input()
-        new_map.append("".join(row_list))
-    
-    
-    for row in new_map:
-        print(row)
-    print(f"{forkliftable} forkliftable rolls")
+        new_map.append(row_list)
+
+    return forkliftable, new_map
 
 def find_neighbors(row, column, floor_map):
     total_rolls = 0

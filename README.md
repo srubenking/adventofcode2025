@@ -47,10 +47,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
   <summary>Day 4</summary>
   
   ### Part 1
-  tba
+  Easier than I thought, right answer first try!
 
   ### Part 2
-  tba
+  I think this is the first day I've gotten both parts correct on the first try! My original code was set up pretty well to adapt it to do Part 2 thankfully (though hoo boy did it take a second to run).
   
 </details>
 
