@@ -58,7 +58,7 @@ This is my first Advent of Code, and first year trying to take learning coding e
   <summary>Day 5</summary>
   
   ### Part 1
-  tba
+  Again, easier than I expected! My first attempt would have actually accounted for Part 2 as well *buuuut* the way I was doing it was *maybe not the most efficient* and I might have done something terrible to WSL in the process (all good after restarting).
 
   ### Part 2
   tba
