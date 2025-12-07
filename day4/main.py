@@ -39,13 +39,11 @@ def remove_rolls(floor_map):
     for row in range(0, len(floor_map)):
         row_list = floor_map[row].copy()
         for column in range(0, len(floor_map[row])):
-            #print(f"checking row {row} column {column}")
             if floor_map[row][column] == "@":
                 if find_neighbors(row, column, floor_map) < 4:
                     forkliftable += 1
                     row_list[column] = "x"
-                    #print(f"{forkliftable} forkliftable so far")
-            #input()
+
         new_map.append(row_list)
 
     return forkliftable, new_map
@@ -55,15 +53,7 @@ def find_neighbors(row, column, floor_map):
     nw, n, ne = "", "", ""
     w, e = "", ""
     sw, s, se = "", "", ""
-    """
-    pretend we're checking position Y where Y is a @ at (1, 2)
-    ..@@.@@@@.
-    @@Y.@.@.@@
-    @@@@@.@.@@
 
-    should have 6 neighbors
-    str.count(sub, [start], [end])
-    """
     if floor_map[row][column] == ".":
         return f"no roll found at row {row} column {column}"
 
@@ -88,14 +78,9 @@ def find_neighbors(row, column, floor_map):
         s = floor_map[row+1][column]
 
     total_neighbors = "".join(nw + n + ne + w + e + sw + s + se)
-    """
-    print("checking:")
-    print(nw + n + ne)
-    print(w + "?" + e)
-    print(sw + s + se)
-    """
+
     total_rolls = total_neighbors.count("@")
-    #print(f"{total_rolls} rolls found")
+
     return total_rolls
 
 def read_file(file):
