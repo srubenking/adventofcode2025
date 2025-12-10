@@ -35,64 +35,45 @@ def main():
     total_items = 0
 
     for range in merged_ranges:
-        total_items += range[1] - range[0]
+        total_items += range[1] - range[0] + 1
     
     print(total_items)
-
-    #answer is to low
-
     
 def merge_ranges(ranges):
     ranges = sorted(ranges, key=order)
     reached_end = False
     index = 0
 
-    # check index 0 against every other
-    # track if any changes are made 
-    # do it again if yes > repeat until no
-    # check index 1 against every other
-    # and so on
-
     while not reached_end:
         new_ranges = []
         range1 = ranges[index]
-        
-        
+              
         for range2 in ranges:
-            #print(f"comparing {range1} and {range2}")
             if range1[0] <= range2[0] and range1[1] >= range2[0]:
                 if range1[1] >= range2[1]:
-                    #print(f"{range2} is redundant as it is either equal to or contained within {range1}")
                     new_ranges.append(range1)
                 elif range1[1] < range2[1]:
-                    #print(f"new range should be {range1[0]}, {range2[1]}")
                     new_ranges.append((range1[0], range2[1]))                 
-            #check if range 1 is contained within range2, or if there's overlap
             elif range1[0] > range2[0] and range1[0] <= range2[1]:
                 if range1[1] < range2[1]:
-                    #print(f"{range1} is redundant as it is contained within {range2}")
                     new_ranges.append(range2)
                 elif range1[1] >= range2[1]:
-                    #print(f"new range should be {range2[0]}, {range1[1]}")
                     new_ranges.append((range2[0], range1[1]))                  
             else:
-                #print(f"no overlap, appending {range1} and {range2}")
                 new_ranges.append(range1)
                 new_ranges.append(range2)
        
         if sorted(list(set(new_ranges)), key=order) == ranges:
-            #print("no changes")
             if index >= len(ranges) - 1:
                 reached_end = True
                 ranges = sorted(list(set(new_ranges)), key=order)
             else:
                 index += 1
                 ranges = sorted(list(set(new_ranges)), key=order)
-                #print(f"no change, next is {index} in range length {len(ranges)}")       
+
         else:
             ranges = sorted(list(set(new_ranges)), key=order)
             index = 0
-            #print(f"next is {index} in range length {len(ranges)}")
 
     return sorted(list(set(ranges)), key=order)
 

@@ -58,10 +58,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
   <summary>Day 5</summary>
   
   ### Part 1
-  Again, easier than I expected! My first attempt would have actually accounted for Part 2 as well *buuuut* the way I was doing it was *maybe not the most efficient* and I might have done something terrible to WSL in the process (all good after restarting).
+  Again, easier than I expected! My first attempt would have actually accounted for Part 2 as well *buuuut* the way I was doing it was *so inefficient that I stopped waiting for it to finish eventually* and I might have done something terrible to WSL in the process (all good after restarting).
 
   ### Part 2
-  tba
+  Part 2 was *significantly* more difficult, but once I had the right idea and made sure the example cases were working, it worked *nearly* first try (I just forgot to account for the fact that the ranges of IDs were inclusive at first).
   
 </details>
 
