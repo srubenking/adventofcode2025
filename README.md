@@ -69,10 +69,10 @@ This is my first Advent of Code, and first year trying to take learning coding e
   <summary>Day 6</summary>
   
   ### Part 1
-  tba
+  This was such a relief after the trouble I had with Day 5 Part 2. Took minutes to do, and the biggest hurdle was *realizing I had copy-pasted my input into my input file but not saved it before trying to run*.
 
   ### Part 2
-  tba
+  This part was harder, but not *that* much harder - I did accidentally make it harder on myself by creating very inflexible code because I'm sleepy and wanted didn't want to think beyond the scope of the problem in front of me though.
   
 </details>
 
